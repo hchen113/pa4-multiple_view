@@ -1,8 +1,14 @@
-//___FILEHEADER___
+//
+//  Multiple_ViewUITests.swift
+//  Multiple ViewUITests
+//
+//  Created by Henry Chen on 10/23/19.
+//  Copyright © 2019 Henry Chen. All rights reserved.
+//
 
 import XCTest
 
-class ___FILEBASENAMEASIDENTIFIER___: XCTestCase {
+class Multiple_ViewUITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
