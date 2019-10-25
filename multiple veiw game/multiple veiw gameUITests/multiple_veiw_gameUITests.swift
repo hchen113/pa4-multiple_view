@@ -1,14 +1,14 @@
 //
-//  Multiple_ViewUITests.swift
-//  Multiple ViewUITests
+//  multiple_veiw_gameUITests.swift
+//  multiple veiw gameUITests
 //
-//  Created by Henry Chen on 10/23/19.
+//  Created by Henry Chen on 10/25/19.
 //  Copyright © 2019 Henry Chen. All rights reserved.
 //
 
 import XCTest
 
-class Multiple_ViewUITests: XCTestCase {
+class multiple_veiw_gameUITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
