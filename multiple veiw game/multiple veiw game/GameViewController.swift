@@ -1,23 +1,14 @@
-
 import UIKit
 import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         
-        let background = UIImageView(image: UIImage(named: "background.png"))
-        background.frame = view.frame
-        background.contentMode = .scaleAspectFill
-        view.addSubview(background)
-        view.sendSubviewToBack(background)
-        
-        
-        //is provides gameplay related content
+        // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
         if let scene = GKScene(fileNamed: "GameScene") {
             
@@ -36,12 +27,13 @@ class GameViewController: UIViewController {
                     view.presentScene(sceneNode)
                     
                     view.ignoresSiblingOrder = true
-                    
-                    view.showsFPS = true
-                    view.showsNodeCount = true
+                    //view.showsFPS = true
+                    //view.showsNodeCount = true
                 }
             }
         }
+        
+        
     }
 
     override var shouldAutorotate: Bool {

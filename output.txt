@@ -1,0 +1,210 @@
+commit 4c56299dd5c3c7466ef914dbd29e21f0c66a270a
+Author: Henry Chen <hchen113@binghamton.edu>
+Date:   Sun Oct 27 20:26:32 2019 -0400
+
+    finished instructionviewcontroller
+
+ .DS_Store                                          | Bin 8196 -> 8196 bytes
+ images/.DS_Store                                   | Bin 6148 -> 6148 bytes
+ images/Game Intro.psd                              | Bin 0 -> 13398732 bytes
+ images/high_score.png                              | Bin 0 -> 2674 bytes
+ images/lives.png                                   | Bin 0 -> 1957 bytes
+ images/player.png                                  | Bin 0 -> 53606 bytes
+ .../multiple veiw game.xcodeproj/project.pbxproj   |   4 +
+ .../UserInterfaceState.xcuserstate                 | Bin 24872 -> 35754 bytes
+ .../multiple veiw game/AppDelegate.swift           |   7 --
+ .../high_score.imageset/Contents.json              |  21 +++++
+ .../high_score.imageset/high_score.png             | Bin 0 -> 2674 bytes
+ .../Assets.xcassets/lives.imageset/Contents.json   |  21 +++++
+ .../Assets.xcassets/lives.imageset/lives.png       | Bin 0 -> 1957 bytes
+ .../Assets.xcassets/player.imageset/Contents.json  |  21 +++++
+ .../Assets.xcassets/player.imageset/player.png     | Bin 0 -> 53606 bytes
+ .../ready_button.imageset/Contents.json            |  21 +++++
+ .../ready_button.imageset/ready_button.png         | Bin 0 -> 3532 bytes
+ .../multiple veiw game/Base.lproj/Main.storyboard  |  69 ++++++++++++--
+ .../multiple veiw game/GameScene.sks               | Bin 4694 -> 4056 bytes
+ .../multiple veiw game/GameScene.swift             |  99 ++++++++++++++++++---
+ .../multiple veiw game/GameViewController.swift    |  18 ++--
+ .../InstructionViewController.swift                |  65 +++++++++++---
+ .../multiple veiw game/IntroViewController.swift   |   7 --
+ .../IntructionTableViewCell.swift                  |  30 +++++++
+ 24 files changed, 333 insertions(+), 50 deletions(-)
+
+commit 2c29b4ea82b9107488e5e63b1898841835d0f43b
+Author: Henry Chen <hchen113@binghamton.edu>
+Date:   Sun Oct 27 02:23:13 2019 -0400
+
+    Finished Intro Screen
+
+ .DS_Store                                          | Bin 8196 -> 8196 bytes
+ images/.DS_Store                                   | Bin 0 -> 6148 bytes
+ images/Game Intro.png                              | Bin 993703 -> 0 bytes
+ images/Start Button.png                            | Bin 19247 -> 0 bytes
+ images/game_intro.png                              | Bin 0 -> 996383 bytes
+ images/instruct_sprite.png                         | Bin 0 -> 257014 bytes
+ images/ready_button.png                            | Bin 0 -> 3532 bytes
+ images/start_button.png                            | Bin 0 -> 12752 bytes
+ images/start_button.psd                            | Bin 0 -> 76151 bytes
+ .../multiple veiw game.xcodeproj/project.pbxproj   |   8 +++
+ .../UserInterfaceState.xcuserstate                 | Bin 11289 -> 24872 bytes
+ .../background.imageset/Contents.json              |  21 +++++++
+ .../background.imageset/background.png             | Bin 0 -> 1122264 bytes
+ .../game_intro.imageset/Contents.json              |  21 +++++++
+ .../game_intro.imageset/game_intro.png             | Bin 0 -> 996383 bytes
+ .../instruct_sprite.imageset/Contents.json         |  21 +++++++
+ .../instruct_sprite.imageset/instruct_sprite.png   | Bin 0 -> 257014 bytes
+ .../start_button.imageset/Contents.json            |  21 +++++++
+ .../start_button.imageset/start_button.png         | Bin 0 -> 12752 bytes
+ .../Assets.xcassets/sushi_1.imageset/Contents.json |  21 +++++++
+ .../Assets.xcassets/sushi_1.imageset/sushi_1.png   | Bin 0 -> 85950 bytes
+ .../Assets.xcassets/sushi_2.imageset/Contents.json |  21 +++++++
+ .../Assets.xcassets/sushi_2.imageset/sushi_2.png   | Bin 0 -> 94948 bytes
+ .../Assets.xcassets/sushi_3.imageset/Contents.json |  21 +++++++
+ .../Assets.xcassets/sushi_3.imageset/sushi_3.png   | Bin 0 -> 93753 bytes
+ .../multiple veiw game/Base.lproj/Main.storyboard  |  67 +++++++++++++++++++--
+ .../multiple veiw game/GameViewController.swift    |   4 +-
+ multiple veiw game/multiple veiw game/Info.plist   |   1 -
+ .../InstructionViewController.swift                |  30 +++++++++
+ .../multiple veiw game/IntroViewController.swift   |  48 +++++++++++++++
+ 30 files changed, 297 insertions(+), 8 deletions(-)
+
+commit 0c18ea8d54b7c71706d3e669b93b83a2613e1690
+Author: Henry Chen <hchen113@binghamton.edu>
+Date:   Fri Oct 25 17:10:05 2019 -0400
+
+    changed to game app setup instead
+
+ .DS_Store                                          | Bin 6148 -> 8196 bytes
+ Multiple View/.DS_Store                            | Bin 6148 -> 0 bytes
+ .../UserInterfaceState.xcuserstate                 | Bin 28893 -> 0 bytes
+ Multiple View/Multiple View/AppDelegate.swift      |  82 -----
+ .../Multiple View/Base.lproj/Main.storyboard       |  68 ----
+ .../Multiple_View.xcdatamodeld/.xccurrentversion   |   8 -
+ .../Multiple_View.xcdatamodel/contents             |   4 -
+ Multiple View/Multiple View/SceneDelegate.swift    |  56 ----
+ .../Multiple View/SecondViewController.swift       |  30 --
+ Multiple View/Multiple View/ViewController.swift   |  21 --
+ images/Game Intro.png                              | Bin 0 -> 993703 bytes
+ images/Start Button.png                            | Bin 0 -> 19247 bytes
+ images/background.png                              | Bin 0 -> 1122264 bytes
+ images/sushi_1.png                                 | Bin 0 -> 85950 bytes
+ images/sushi_2.png                                 | Bin 0 -> 94948 bytes
+ images/sushi_3.png                                 | Bin 0 -> 93753 bytes
+ .../multiple veiw game.xcodeproj}/project.pbxproj  | 347 ++++++++++-----------
+ .../project.xcworkspace/contents.xcworkspacedata   |   2 +-
+ .../xcshareddata/IDEWorkspaceChecks.plist          |   0
+ .../UserInterfaceState.xcuserstate                 | Bin 0 -> 11289 bytes
+ .../xcschemes/xcschememanagement.plist             |   2 +-
+ multiple veiw game/multiple veiw game/Actions.sks  | Bin 0 -> 1892 bytes
+ .../multiple veiw game/AppDelegate.swift           |  41 +++
+ .../AppIcon.appiconset/Contents.json               |   0
+ .../Assets.xcassets/Contents.json                  |   0
+ .../Base.lproj/LaunchScreen.storyboard             |   0
+ .../multiple veiw game/Base.lproj/Main.storyboard  |  24 ++
+ .../multiple veiw game/GameScene.sks               | Bin 0 -> 4694 bytes
+ .../multiple veiw game/GameScene.swift             |  25 ++
+ .../multiple veiw game/GameViewController.swift    |  60 ++++
+ .../multiple veiw game}/Info.plist                 |  22 +-
+ .../multiple veiw gameTests}/Info.plist            |   0
+ .../multiple_veiw_gameTests.swift                  |  10 +-
+ .../multiple veiw gameUITests}/Info.plist          |   0
+ .../multiple_veiw_gameUITests.swift                |   8 +-
+ 35 files changed, 331 insertions(+), 479 deletions(-)
+
+commit 35b9d4b4780b2712cc3a3c323ee46398a163dbe5
+Author: Henry Chen <hchen113@binghamton.edu>
+Date:   Fri Oct 25 11:23:22 2019 -0400
+
+    storyboard
+
+ .../Multiple View.xcodeproj/project.pbxproj        |   2 +-
+ .../UserInterfaceState.xcuserstate                 | Bin 17765 -> 28893 bytes
+ .../Multiple View/Base.lproj/Main.storyboard       |  39 +++++++++++++++++----
+ Multiple View/Multiple View/Info.plist             |   3 +-
+ 4 files changed, 35 insertions(+), 9 deletions(-)
+
+commit 0352f73cb82ebdd7567642c6b21c783166c46f45
+Author: Henry Chen <hchen113@binghamton.edu>
+Date:   Wed Oct 23 16:09:10 2019 -0400
+
+    Second ViewController
+
+ .DS_Store                                          | Bin 6148 -> 6148 bytes
+ Multiple View/.DS_Store                            | Bin 0 -> 6148 bytes
+ .../Multiple View.xcodeproj/project.pbxproj        |   4 +++
+ .../UserInterfaceState.xcuserstate                 | Bin 13194 -> 17765 bytes
+ .../Multiple View/Base.lproj/Main.storyboard       |  27 +++++++++++++++----
+ .../Multiple View/SecondViewController.swift       |  30 +++++++++++++++++++++
+ Multiple View/Multiple View/ViewController.swift   |   1 +
+ 7 files changed, 57 insertions(+), 5 deletions(-)
+
+commit bbbba437cb8e81f8a215f0e825b387c0eede1bf3
+Author: Henry Chen <hchen113@binghamton.edu>
+Date:   Wed Oct 23 10:30:24 2019 -0400
+
+    changed project to storyboard UI
+
+ .DS_Store                                          | Bin 6148 -> 6148 bytes
+ .../Multiple View.xcodeproj}/project.pbxproj       | 350 ++++++++++-----------
+ .../project.xcworkspace/contents.xcworkspacedata   |   2 +-
+ .../xcshareddata/IDEWorkspaceChecks.plist          |   0
+ .../UserInterfaceState.xcuserstate                 | Bin 0 -> 13194 bytes
+ .../xcschemes/xcschememanagement.plist             |   2 +-
+ .../Multiple View}/AppDelegate.swift               |   4 +-
+ .../AppIcon.appiconset/Contents.json               |   0
+ .../Multiple View}/Assets.xcassets/Contents.json   |   0
+ .../Base.lproj/LaunchScreen.storyboard             |   0
+ .../Multiple View/Base.lproj/Main.storyboard       |  24 ++
+ .../Multiple View}/Info.plist                      |   4 +
+ .../Multiple_View.xcdatamodeld}/.xccurrentversion  |   2 +-
+ .../Multiple_View.xcdatamodel}/contents            |   0
+ .../Multiple View}/SceneDelegate.swift             |  19 +-
+ Multiple View/Multiple View/ViewController.swift   |  20 ++
+ .../Multiple ViewTests}/Info.plist                 |   0
+ .../Multiple ViewTests/Multiple_ViewTests.swift    |  12 +-
+ .../Multiple ViewUITests}/Info.plist               |   0
+ .../Multiple_ViewUITests.swift                     |  10 +-
+ .../UserInterfaceState.xcuserstate                 | Bin 21065 -> 0 bytes
+ cs 441 - multiple view/ContentView.swift           |  21 --
+ .../Preview Assets.xcassets/Contents.json          |   6 -
+ cs-441 --- multiple-view.textClipping              | Bin 263 -> 0 bytes
+ 24 files changed, 245 insertions(+), 231 deletions(-)
+
+commit 7e8ee075eea2c7bb3d0cd3924f0798b2f67bcaf6
+Author: Henry Chen <hchen113@binghamton.edu>
+Date:   Wed Oct 23 10:17:28 2019 -0400
+
+    inital
+
+ .DS_Store                                          | Bin 0 -> 6148 bytes
+ cs 441 - multiple view.xcodeproj/project.pbxproj   | 616 +++++++++++++++++++++
+ .../project.xcworkspace/contents.xcworkspacedata   |   7 +
+ .../xcshareddata/IDEWorkspaceChecks.plist          |   8 +
+ .../UserInterfaceState.xcuserstate                 | Bin 0 -> 21065 bytes
+ .../xcschemes/xcschememanagement.plist             |  14 +
+ cs 441 - multiple view/AppDelegate.swift           |  82 +++
+ .../AppIcon.appiconset/Contents.json               |  98 ++++
+ .../Assets.xcassets/Contents.json                  |   6 +
+ .../Base.lproj/LaunchScreen.storyboard             |  25 +
+ cs 441 - multiple view/ContentView.swift           |  21 +
+ cs 441 - multiple view/Info.plist                  |  60 ++
+ .../Preview Assets.xcassets/Contents.json          |   6 +
+ cs 441 - multiple view/SceneDelegate.swift         |  71 +++
+ .../.xccurrentversion                              |   8 +
+ .../cs_441___multiple_view.xcdatamodel/contents    |   4 +
+ cs 441 - multiple viewTests/Info.plist             |  22 +
+ .../cs_441___multiple_viewTests.swift              |  28 +
+ cs 441 - multiple viewUITests/Info.plist           |  22 +
+ .../cs_441___multiple_viewUITests.swift            |  37 ++
+ cs-441 --- multiple-view.textClipping              | Bin 0 -> 263 bytes
+ 21 files changed, 1135 insertions(+)
+
+commit c8109c55725eb855889f9e45489b635518ed8aa3
+Author: Henry Chen <hchen113@binghamton.edu>
+Date:   Wed Oct 23 10:11:03 2019 -0400
+
+    Initial commit
+
+ .gitattributes | 2 ++
+ README.md      | 2 ++
+ 2 files changed, 4 insertions(+)

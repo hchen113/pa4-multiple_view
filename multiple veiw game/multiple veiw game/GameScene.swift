@@ -2,29 +2,49 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
-
+    
     var player = SKSpriteNode(imageNamed: "player")
+    var background = SKSpriteNode(imageNamed: "background")
     let displayWidth = UIScreen.main.bounds.width
     var move = false;
+    var high_score_label = UILabel()
+    var inst = IntroViewController()
     
-    
+
     override func sceneDidLoad() {
+        
+        background.size = self.frame.size;
+        background.position = CGPoint(x:self.frame.midX, y:self.frame.midY);
+        self.scaleMode = .aspectFit
+        self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
+        background.zPosition = 0
+        addChild(background)
         
         let floor = SKSpriteNode(color: UIColor.black, size: CGSize(width: frame.width, height: 100))
         floor.alpha = 0.0
         floor.position = CGPoint(x: 0, y: -330)
         floor.physicsBody = SKPhysicsBody(rectangleOf: floor.size)
         floor.physicsBody!.isDynamic = false
+        floor.zPosition = 1
         self.addChild(floor)
-
-
+        
+        
         player.setScale(0.35)
         player.position = CGPoint(x:0, y: 100)
         player.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: player.size.width,height: player.size.height));
         player.physicsBody?.isDynamic = true
+        player.zPosition = 2
         addChild(player)
         
-
+        let w = UIScreen.main.bounds.width
+        let h = UIScreen.main.bounds.height
+        high_score_label = UILabel(frame: CGRect(x: w / 2, y: h / 2, width: 120, height: 30))
+        high_score_label.text = String(inst.high_score)
+        high_score_label.center = CGPoint(x: w / 4, y: 0.07 * h)
+        high_score_label.textColor = UIColor.red
+        view?.addSubview(high_score_label)
+        
+        
     }
     
     func rain_food(){
@@ -38,7 +58,11 @@ class GameScene: SKScene {
             food.position = CGPoint(x: Int(arc4random_uniform(upper - lower) + lower), y:  330)
             food.physicsBody?.isDynamic = true
             food.setScale(0.1)
-            addChild(food)
+            food.zPosition = 3
+            if (food.position.y == 100){
+                food.removeFromParent()
+            }
+            self.addChild(food)
             return
         }else if(randomNumber == 1){
             let food = SKSpriteNode(imageNamed: "sushi_2")
@@ -46,7 +70,11 @@ class GameScene: SKScene {
             food.position = CGPoint(x: -Int(arc4random_uniform(upper - lower) + lower), y: 330)
             food.physicsBody?.isDynamic = true
             food.setScale(0.1)
-            addChild(food)
+            food.zPosition = 3
+            if (food.position.y == 0){
+                food.removeFromParent()
+            }
+            self.addChild(food)
             return
         }
         else{
@@ -55,7 +83,12 @@ class GameScene: SKScene {
             food.position = CGPoint(x: Int(arc4random_uniform(upper - lower) + lower), y: 330)
             food.physicsBody?.isDynamic = true
             food.setScale(0.1)
-            addChild(food)
+            food.zPosition = 3
+            if (food.position.y == -100){
+                food.removeFromParent()
+            }
+            self.addChild(food)
+            
             return
         }
         
@@ -69,16 +102,16 @@ class GameScene: SKScene {
                 move = true
             }else{
                 if touchLocation.x < self.frame.midX{
-                     player.physicsBody?.applyForce(CGVector(dx: -100000, dy: 0))
-                    if(touchLocation.y > 1) {
-                        player.physicsBody?.applyForce(CGVector(dx: 0, dy: 55000))
+                    if (player.xScale > 0){
+                        player.xScale = player.xScale * -1;
                     }
+                    player.physicsBody?.applyForce(CGVector(dx: -100000, dy: 0))
 
                 } else if touchLocation.x > self.frame.midX{
-                    player.physicsBody?.applyForce(CGVector(dx: 100000, dy: 0))
-                    if(touchLocation.y > 1) {
-                        player.physicsBody?.applyForce(CGVector(dx: 0, dy: 55000))
+                    if (player.xScale < 0){
+                        player.xScale = player.xScale * -1;
                     }
+                    player.physicsBody?.applyForce(CGVector(dx: 100000, dy: 0))
                 }
             }
             
@@ -94,9 +127,11 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         if(move){player.physicsBody?.applyForce(CGVector(dx: 100, dy: 0))}
         
-        //rain_food()
         
-        
-    }
+        let randomNumber = arc4random_uniform(10)
+        if (randomNumber == 1){
+            rain_food()
+        }
 
+    }
 }
