@@ -19,6 +19,7 @@
 		BA27C98123639BE3004F0884 /* multiple_veiw_gameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA27C98023639BE3004F0884 /* multiple_veiw_gameUITests.swift */; };
 		BA27C98F23639CBE004F0884 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA27C98E23639CBE004F0884 /* IntroViewController.swift */; };
 		BA27C99123656222004F0884 /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA27C99023656222004F0884 /* InstructionViewController.swift */; };
+		BA27C99323663C12004F0884 /* IntructionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA27C99223663C12004F0884 /* IntructionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		BA27C98223639BE3004F0884 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA27C98E23639CBE004F0884 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		BA27C99023656222004F0884 /* InstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
+		BA27C99223663C12004F0884 /* IntructionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntructionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				BA27C95E23639BE1004F0884 /* Actions.sks */,
 				BA27C96023639BE1004F0884 /* GameScene.swift */,
 				BA27C96223639BE1004F0884 /* GameViewController.swift */,
+				BA27C99223663C12004F0884 /* IntructionTableViewCell.swift */,
 				BA27C99023656222004F0884 /* InstructionViewController.swift */,
 				BA27C98E23639CBE004F0884 /* IntroViewController.swift */,
 				BA27C96423639BE1004F0884 /* Main.storyboard */,
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA27C99323663C12004F0884 /* IntructionTableViewCell.swift in Sources */,
 				BA27C99123656222004F0884 /* InstructionViewController.swift in Sources */,
 				BA27C96123639BE1004F0884 /* GameScene.swift in Sources */,
 				BA27C96323639BE1004F0884 /* GameViewController.swift in Sources */,

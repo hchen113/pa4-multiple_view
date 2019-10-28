@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  multiple veiw game
-//
-//  Created by Henry Chen on 10/25/19.
-//  Copyright © 2019 Henry Chen. All rights reserved.
-//
 
 import UIKit
 

@@ -1,10 +1,3 @@
-//
-//  GameViewController.swift
-//  multiple veiw game
-//
-//  Created by Henry Chen on 10/25/19.
-//  Copyright © 2019 Henry Chen. All rights reserved.
-//
 
 import UIKit
 import SpriteKit
@@ -12,10 +5,19 @@ import GameplayKit
 
 class GameViewController: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
+        let background = UIImageView(image: UIImage(named: "background.png"))
+        background.frame = view.frame
+        background.contentMode = .scaleAspectFill
+        view.addSubview(background)
+        view.sendSubviewToBack(background)
+        
+        
+        //is provides gameplay related content
         // including entities and graphs.
         if let scene = GKScene(fileNamed: "GameScene") {
             
